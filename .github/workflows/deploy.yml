@@ -28,7 +28,9 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghcr.io/mcavdar/docker-ci-cd:latest
+          tags:|
+      ghcr.io/mcavdar/docker-ci-cd:latest
+      ghcr.io/mcavdar/docker-ci-cd:${{ github.sha }}
 
       - name: Deploy on Home Server
         uses: appleboy/ssh-action@v1
